@@ -1,4 +1,6 @@
-from django.test import TestCase, Client
+# from django.contrib.auth.models import AnonymousUser
+# from django.contrib.auth.views import PasswordResetConfirmView
+from django.test import TestCase, Client, RequestFactory
 from django.urls import reverse
 
 from users.models import User
@@ -7,6 +9,7 @@ from users.models import User
 class TestUsersViews(TestCase):
     def setUp(self):
         self.client = Client()
+        self.factory = RequestFactory()
         self.user = User.objects.create_user(
             username="user1",
             email="user1@gmail.com",
@@ -14,6 +17,10 @@ class TestUsersViews(TestCase):
         )
         self.account_url = reverse("account")
         self.register_url = reverse("register")
+        self.password_reset_url = reverse("password_reset")
+        self.password_reset_done_url = reverse("password_reset_done")
+        # self.password_reset_confirm_url = reverse("password_reset_confirm")
+        # self.password_reset_complete_url = reverse("password_reset_complete")
 
     def test_registration_success(self):
         data = {
@@ -34,3 +41,44 @@ class TestUsersViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "account.html")
+
+    def test_password_reset_page(self):
+        # check that reverse the password_reset template
+        response = self.client.get(self.password_reset_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "password_reset.html")
+
+    def test_password_reset_done_page(self):
+        response = self.client.get(self.password_reset_done_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "password_reset_done.html")
+    
+    """def test_password_reset_confirm_page(self):
+        # Create an instance of a GET request.
+        request = self.factory.get(self.password_reset_confirm_url)
+
+        # Recall that middleware are not supported. You can simulate a
+        # logged-in user by setting request.user manually.
+        request.user = self.user
+
+        # Or you can simulate an anonymous user by setting request.user to
+        # an AnonymousUser instance.
+        request.user = AnonymousUser()
+
+        # Test my_view() as if it were deployed at /customer/details
+        response = PasswordResetConfirmView(request)
+        self.assertEqual(response.status_code, 200)
+
+    def test_password_reset_confirm_page(self):
+        response = self.client.get(self.password_reset_confirm_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "password_reset_confirm.html")
+
+    def test_password_reset_complete_page(self):
+        response = self.client.get(self.password_reset_complete_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "password_reset_complete.html")"""
