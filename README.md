@@ -35,11 +35,11 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 (To deactivate the virtual environment, run this command: `exit`)
 
 ### New features added 📋
-+ ...
++ Reset password
 + ...
 
 ### Checklist 📝
-- [ ] ...
+- [x] Add password reset feature + tests
 - [ ] Added a functional test with Selenium
 - [ ] Check PEP8 with flake8 and refacto with black + manually
 - [ ] Deploy
