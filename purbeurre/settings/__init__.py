@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     # my_apps
     "search",
     "users",
+    "autocomplete",
     # others
     "crispy_forms",
 ]

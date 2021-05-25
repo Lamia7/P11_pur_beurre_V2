@@ -11,7 +11,7 @@ class MainSearchForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "Entrez un produit",
-                "class": "form-control",
+                "class": "form-control autocomplete_search",
                 "type": "text",
                 "autofocus": "autofocus",
             }
@@ -27,7 +27,7 @@ class NavSearchForm(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "Entrez un produit",
-                "class": "form-control",
+                "class": "form-control autocomplete_search",
                 "type": "text",
             }
         ),

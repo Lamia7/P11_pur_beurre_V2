@@ -62,4 +62,11 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
+    path(
+        "autocomplete/",
+        include(
+            "autocomplete.urls",
+            namespace="autocomplete",
+        ),
+    ),
 ]
