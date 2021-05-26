@@ -54,8 +54,9 @@ class TestUsersViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "password_reset_done.html")
-    
-    """def test_password_reset_confirm_page(self):
+
+
+"""def test_password_reset_confirm_page(self):
         # Create an instance of a GET request.
         request = self.factory.get(self.password_reset_confirm_url)
 

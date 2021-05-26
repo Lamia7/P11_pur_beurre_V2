@@ -27,8 +27,8 @@ urlpatterns = [
     path("register/", users_views.register, name="register"),
     path("account/", users_views.account, name="account"),
     path(
-        "login/", auth_views.LoginView.as_view(template_name="login.html"),
-        name="login"
+        "login/", auth_views.LoginView.as_view(
+            template_name="login.html"), name="login"
     ),
     path(
         "logout/",
@@ -38,8 +38,7 @@ urlpatterns = [
     path(
         "password-reset/",
         auth_views.PasswordResetView.as_view(
-            template_name="password_reset.html"),
-            name="password_reset",
+            template_name="password_reset.html"), name="password_reset",
     ),
     path(
         "password-reset/done/",

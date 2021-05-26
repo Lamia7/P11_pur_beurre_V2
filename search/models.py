@@ -57,6 +57,5 @@ class Favorite(models.Model):
     )
 
     def __str__(self):
-        return (
-            f"Produit: {self.product}, Substitut: {self.substitute}, User: {self.user}"
-        )
+        return f"Produit: {self.product}, Substitut: {self.substitute}, \
+                User: {self.user}"
