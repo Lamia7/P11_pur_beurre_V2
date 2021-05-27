@@ -10570,6 +10570,7 @@ header.masthead {
 header.masthead,
 header.register,
 header.login,
+header.password-reset,
 header.account,
 header.products h1 {
   font-size: 2.5rem;
@@ -10578,6 +10579,7 @@ header.products h1 {
   header.masthead,
   header.register,
   header.login,
+  header.password-reset,
   header.account,
   header.products {
     height: 100vh;
@@ -10587,11 +10589,13 @@ header.products h1 {
   }
   header.masthead,
   header.register,
+  header.password-reset,
   header.login p {
     font-size: 1.15rem;
   }
   header.masthead,
   header.register,
+  header.password-reset,
   header.login,
   header.account,
   header.products h1 {
@@ -10602,6 +10606,7 @@ header.products h1 {
   header.masthead,
   header.register,
   header.login,
+  header.password-reset,
   header.account,
   header.products h1 {
     font-size: 2.75rem;
@@ -10610,6 +10615,7 @@ header.products h1 {
 
 header.register,
 header.login,
+header.password-reset,
 header.account,
 header.products {
   padding-top: 10rem;

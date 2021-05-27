@@ -8,7 +8,7 @@ addons:
 # safelist (indicate the only branches to check)
 branches:
   only:
-    - master
+    - main
 
 install:
   - pip install -r requirements.txt
@@ -24,4 +24,5 @@ services:
   - postgresql
 
 script:
-  - python manage.py test
+  - python3 manage.py test
+  - flake8 --ignore=F403,F401,W503

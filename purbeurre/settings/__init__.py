@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     # my_apps
     "search",
     "users",
+    "autocomplete",
     # others
     "crispy_forms",
 ]
@@ -130,16 +131,16 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa: E501
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa: E501
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa: E501
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa: E501
     },
 ]
 
@@ -182,3 +183,11 @@ LOGIN_REDIRECT_URL = "search:home"
 redirects to the login page,
 then to the page they tried to access to (@decorators in views)"""
 LOGIN_URL = "login"
+
+# Email server (Gmail) for password reset
+EMAL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")

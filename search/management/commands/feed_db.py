@@ -35,7 +35,7 @@ class Command(BaseCommand):
             for product in products:
                 name = product.get(
                     "product_name_fr"
-                    )[:150].strip().lower().capitalize()
+                )[:150].strip().lower().capitalize()
                 brands = product.get("brands")[:150].upper()
                 barcode = product.get("code")[:13].strip()
                 url = product.get("url")

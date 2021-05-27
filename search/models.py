@@ -1,5 +1,6 @@
 from django.db import models
 
+from search.managers import ProductManager
 from users.models import User
 
 
@@ -29,6 +30,8 @@ class Product(models.Model):
     salt_100g = models.FloatField(default=0, null=True)
     categories = models.ManyToManyField(Category)
 
+    objects = ProductManager()
+
     def __str__(self):
         return f"{self.name}, {self.nutriscore}"
 
@@ -54,6 +57,4 @@ class Favorite(models.Model):
     )
 
     def __str__(self):
-        return (
-            f"Produit: {self.product}, Substitut: {self.substitute}, User: {self.user}"
-        )
+        return f"Produit: {self.product}, Substitut: {self.substitute}, User: {self.user}"  # noqa : E501

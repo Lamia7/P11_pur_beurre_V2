@@ -19,7 +19,8 @@ def home(request):
 
 
 def products(request):
-    """Displays the result page with list of products according to user input"""
+    """Displays the result page with list of products
+    according to user input"""
     if request.method == "POST":
         # get the value of name="" from template
         product_search = request.POST["product_search"]
@@ -53,7 +54,7 @@ def product(request, product_id):
 
 def substitutes(request, product_id):
     """Displays the result page with list of substitutes for the selected product
-    
+
     Args:
         product_id (int): Id of the product"""
     # Find product searched by user with id
