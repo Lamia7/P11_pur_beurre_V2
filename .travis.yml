@@ -25,3 +25,4 @@ services:
 
 script:
   - python3 manage.py test
+  - flake8 --ignore=F403,F401,W503
