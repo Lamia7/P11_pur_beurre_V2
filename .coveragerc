@@ -11,3 +11,4 @@ omit =
         */urls.py
         purbeurre/asgi.py
         purbeurre/wsgi.py
+        purbeurre/settings/*

@@ -36,16 +36,19 @@ Run the application: `python3 manage.py runserver` and go to your localhost : `h
 
 ### New features added 📋
 + Reset password
-+ ...
++ Autocomplete on product research
 
 ### Checklist 📝
-- [x] Add password reset feature + tests
-- [ ] Added a functional test with Selenium
-- [ ] Check PEP8 with flake8 and refacto with black + manually
-- [ ] Deploy
+- [x] Add 'password reset' feature + unit tests
+- [x] Add a functional test with Selenium for 'reset password' feature
+- [x] Add 'autocomplete' feature + unit tests
+- [x] Check PEP8 with flake8 and refacto with black + manually
+- [x] Add flake8 to CI with Travis
+- [x] Deploy
 
 ### Tests 🧪
-- Launches the unit tests : `coverage run --source='.' manage.py test`
+- Launches the unit tests : `python3 manage.py test`
+- Launches the unit tests with coverage: `coverage run --source='.' manage.py test`
 - Display the coverage report : `coverage report`
 - Display the html coverage report details : `coverage html`
 - Launches the functional test with Selenium : `./manage.py test tests.users.functional_tests`

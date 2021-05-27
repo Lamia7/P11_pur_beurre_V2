@@ -54,32 +54,3 @@ class TestUsersViews(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "password_reset_done.html")
-
-
-"""def test_password_reset_confirm_page(self):
-        # Create an instance of a GET request.
-        request = self.factory.get(self.password_reset_confirm_url)
-
-        # Recall that middleware are not supported. You can simulate a
-        # logged-in user by setting request.user manually.
-        request.user = self.user
-
-        # Or you can simulate an anonymous user by setting request.user to
-        # an AnonymousUser instance.
-        request.user = AnonymousUser()
-
-        # Test my_view() as if it were deployed at /customer/details
-        response = PasswordResetConfirmView(request)
-        self.assertEqual(response.status_code, 200)
-
-    def test_password_reset_confirm_page(self):
-        response = self.client.get(self.password_reset_confirm_url)
-
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "password_reset_confirm.html")
-
-    def test_password_reset_complete_page(self):
-        response = self.client.get(self.password_reset_complete_url)
-
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "password_reset_complete.html")"""
