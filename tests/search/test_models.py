@@ -38,7 +38,8 @@ class ModelsTestCase(TestCase):
             name="Biscuit sésame", barcode="3175680011480", nutriscore="C"
         )
         user = User.objects.create(
-            username="username1", email="username1@gmail.com",
+            username="username1",
+            email="username1@gmail.com",
             password="password1"
         )
         favorite = Favorite.objects.create(
@@ -46,6 +47,5 @@ class ModelsTestCase(TestCase):
         )
         self.assertEqual(
             str(favorite),
-            f"Produit: {favorite.product}, Substitut: {favorite.substitute},\
-            User: {favorite.user}",
+            f"Produit: {favorite.product}, Substitut: {favorite.substitute}, User: {favorite.user}",  # noqa: E501
         )
