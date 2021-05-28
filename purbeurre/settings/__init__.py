@@ -38,6 +38,7 @@ DEBUG = False if ENV == "production" else True
 
 ALLOWED_HOSTS = [
     "104.236.207.103",
+    "miam-purbeurre.me",
     "miam-purbeurre.herokuapp.com",
     "localhost",
     "127.0.0.1",
