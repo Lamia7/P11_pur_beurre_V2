@@ -47,5 +47,5 @@ class ModelsTestCase(TestCase):
         )
         self.assertEqual(
             str(favorite),
-            f"Produit: {favorite.product}, Substitut: {favorite.substitute}, User: {favorite.user}",  # noqa: E501
+            f"Produit: {favorite.product} / Substitut: {favorite.substitute} / User: {favorite.user}",  # noqa: E501
         )
